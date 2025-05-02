@@ -13,8 +13,7 @@ async def lifespan(app: FastAPI):
     # Cleanup if needed
 
 app = FastAPI(lifespan=lifespan)
-
-# Add CORS middleware
+# Add CORS middleware hihh
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000","http://127.0.0.1:8000","https://your-frontend-domain.com"],  # Adjust for your frontend
