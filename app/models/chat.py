@@ -1,9 +1,11 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
+from typing import List, Dict, Any
 
 class ChatRequest(BaseModel):
-    query: str = Field(..., min_length=1, description="The user query")
+    query: str
 
 class ChatResponse(BaseModel):
     message: str
     query: str
-    source_documents: list[dict] | None = None
+    source_documents: List[Dict[str, Any]]
+    context_missing: bool
